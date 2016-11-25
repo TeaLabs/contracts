@@ -1,0 +1,29 @@
+{
+    "name": "tea/contracts",
+    "description": "The Tea Contracts Packege.",
+    "homepage": "https://github.com/php-tea-lab/contracts",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Kyalo",
+            "email": "davidmkyalo@gmail.com",
+            "homepage": "http://www.davidkyalo.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/php-tea-lab/contracts/issues",
+        "source": "https://github.com/php-tea-lab/contracts"
+    },
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": { "Tea\\Contracts\\": "src/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.0-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}

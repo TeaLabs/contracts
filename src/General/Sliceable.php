@@ -42,7 +42,7 @@ interface Sliceable
 	 * @param  bool  $preserveKeys
 	 * @return mixed
 	 */
-	public static function slice($offset, $length = null, $preserveKeys = false);
+	public function slice($offset, $length = null, $preserveKeys = false);
 
 	/**
 	 * Get the element at the given index. If the given index is a string in the format:

@@ -37,12 +37,12 @@ interface Sliceable
 	 * If it is omitted, then the sequence will have everything from offset up until
 	 * the end of the collection.
 	 *
-	 * @param  int   $offset
-	 * @param  int   $length
+	 * @param  int   $start
+	 * @param  int   $end
 	 * @param  bool  $preserveKeys
 	 * @return mixed
 	 */
-	public function slice($offset, $length = null, $preserveKeys = false);
+	public function subset($start, $end = null, $preserveKeys = false);
 
 	/**
 	 * Get the element at the given index. If the given index is a string in the format:

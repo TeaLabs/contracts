@@ -15,7 +15,8 @@
         "source": "https://github.com/php-tea-lab/contracts"
     },
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.4",
+        "tea/future": "~0.1.0"
     },
     "autoload": {
         "psr-4": { "Tea\\Contracts\\": "src/" }

@@ -36,7 +36,6 @@ interface Sliceable
 	 *
 	 * @param  int   $offset
 	 * @param  int   $length
-	 * @param  bool  $preserveKeys
 	 * @return mixed
 	 */
 	public function slice($offset, $length = null);

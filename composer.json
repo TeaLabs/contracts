@@ -16,7 +16,7 @@
     },
     "require": {
         "php": ">=5.4",
-        "illuminate/contracts": "5.1.*"
+        "illuminate/contracts": "~5.1"
     },
     "autoload": {
         "psr-4": { "Tea\\Contracts\\": "src/" }

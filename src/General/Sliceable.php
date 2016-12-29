@@ -4,25 +4,22 @@ namespace Tea\Contracts\General;
 /**
  * Interface to provide extraction of slices of an object.
  *
- * @method  mixed slice($offset, $length = null, $preserveKeys = false)
- * 			Returns a portion of the object of size "length" starting from the
- * 			"offset" element.
+ * If a Sliceable class implements ArrayAccess, ArrayAccess::offsetGet('2:5')
+ * can be used to extract a slice by calling Sliceable::slice(2,5) with 2 as the
+ * offset and 5 as the length. When implementing this, make sure the offset string
+ * is valid. The regex {@see Tea\Contracts\General\Sliceable::SLICE_OFFSET_REGEX},
+ * can be used to match against the offset string.
  *
- * @method  mixed offsetGet($index)
- * 		Get the element at the given index or a slice of the object if the
- * 		index is in "offset:length"	format.
- * 		If the object implements \ArrayAccess, $object[2] should return the element
- * 		at index 2 while $object['2:5'] should return a slice with 2 as the offset
- * 		and 5 as the length.
- *
- * 		More Slice Examples:
- * 			$object[':5'] == $object->slice(0,5)
- * 			$object['3:'] == $object->slice(3)
- * 			$object['-5:3'] == $object->slice(-5,3)
- * 			$object['5:-3'] == $object->slice(5,-3)
+ * More \ArrayAccess::offsetGet() Examples:
+ *   $object[':5'] == $object->slice(0,5)
+ *   $object['3:'] == $object->slice(3)
+ *   $object['-5:3'] == $object->slice(-5,3)
+ *   $object['5:-3'] == $object->slice(5,-3)
 */
 interface Sliceable
 {
+	const SLICE_OFFSET_REGEX = '^(?P<offset>(?:-?[0-9]+)?)\:(?P<length>(?:-?[0-9]+)?)$';
+
 	/**
 	 * Extract a slice of the collection as specified by the offset and length.
 	 *
@@ -37,21 +34,11 @@ interface Sliceable
 	 * If it is omitted, then the sequence will have everything from offset up until
 	 * the end of the collection.
 	 *
-	 * @param  int   $start
-	 * @param  int   $end
+	 * @param  int   $offset
+	 * @param  int   $length
 	 * @param  bool  $preserveKeys
 	 * @return mixed
 	 */
-	public function subset($start, $end = null, $preserveKeys = false);
-
-	/**
-	 * Get the element at the given index. If the given index is a string in the format:
-	 * "offset:length", "offset:" or ":length" (where "offset" and "length" are integers),
-	 * a slice equivalent to calling $this->slice($offset, $length); is returned.
-	 *
-	 * @param  mixed $index
-	 * @return mixed
-	 */
-	public function offsetGet($index);
+	public function slice($offset, $length = null);
 
 }

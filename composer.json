@@ -1,7 +1,7 @@
 {
     "name": "tea/contracts",
     "description": "The Tea Contracts Packege.",
-    "homepage": "https://github.com/php-tea-lab/contracts",
+    "homepage": "https://github.com/TeaLabs/contracts",
     "license": "MIT",
     "authors": [
         {
@@ -11,8 +11,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/php-tea-lab/contracts/issues",
-        "source": "https://github.com/php-tea-lab/contracts"
+        "issues": "https://github.com/TeaLabs/contracts/issues",
+        "source": "https://github.com/TeaLabs/contracts"
     },
     "require": {
         "php": ">=5.4",

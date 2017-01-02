@@ -18,7 +18,7 @@ namespace Tea\Contracts\General;
 */
 interface Sliceable
 {
-	const SLICE_OFFSET_REGEX = '^(?P<offset>(?:-?[0-9]+)?)\:(?P<length>(?:-?[0-9]+)?)$';
+	const SLICE_OFFSET_REGEX = '^(?P<offset>(?:-?[0-9]+)?)(?:\:)(?P<length>(?:-?[0-9]+)?)$';
 
 	/**
 	 * Extract a slice of the collection as specified by the offset and length.
